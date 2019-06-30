@@ -1,0 +1,7 @@
+N = int(input())
+
+balls = []
+for i in range(0, N):
+    balls.append([int(x) for x in input().split])
+
+print(balls)
