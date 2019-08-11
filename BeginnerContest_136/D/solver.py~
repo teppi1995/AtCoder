@@ -1,0 +1,25 @@
+import logging
+
+logging.basicConfig(level=logging.INFO, format="%(message)s")
+#logging.disable(logging.CRITICAL)
+
+def main():
+    S = input()
+    S_len = S.length()
+    child = [1 for _ in range(S_len)]
+    logging.info("Hello!")
+
+    for i in range(10000):
+        for j in range(S_len):
+            if S[j] == "R":
+                child[j] -= 1
+                child[j + 1] += 1
+            elif S[j] == "L":
+                child[j] -= 1
+                child[j - 1] -= 1
+
+    print(child)
+                
+    
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,11 @@
+import logging
+
+logging.basicConfig(level=logging.INFO, format="%(message)s")
+logging.disable(logging.CRITICAL)
+
+= int(input())
+N, M = (int(x) for x in input().split())
+a_ = []
+a_ += int(input()) for _ in range(M)
+
+print(a)

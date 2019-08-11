@@ -1,0 +1,14 @@
+N = int(input())
+W_ = list(int(x) for x in input().split())
+
+S = sum(W_)
+
+sum = 0
+counter = 1
+for num in W_:
+    sum += num
+    counter += 1
+    if sum >= S:
+        print(abs(sum(W_[0:counter]) - sum(W_[counter:N])))
+    
+    

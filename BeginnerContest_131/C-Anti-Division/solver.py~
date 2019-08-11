@@ -1,0 +1,16 @@
+import math
+import logging
+
+logging.basicConfig(level=logging.INFO, format="%(message)s")
+logging.disable(logging.CRITICAL)
+
+A, B, C, D = (int(x) for x in input().split())
+lcm_CD = C * D / math.gcd(C, D)
+
+div_C = int(B / C) - int((A - 1) / C)
+div_D = int(B / D) - int((A - 1) / D)
+div_lcm_CD = int(B / lcm_CD) - int((A - 1) / lcm_CD)
+
+answer = B - A + 1 - div_C - div_D + div_lcm_CD
+
+print(answer)

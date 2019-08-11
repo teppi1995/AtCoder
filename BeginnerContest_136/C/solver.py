@@ -1,0 +1,26 @@
+import logging
+
+logging.basicConfig(level=logging.INFO, format="%(message)s")
+#logging.disable(logging.CRITICAL)
+
+def main():
+    N = int(input())
+    H = list(map(int, input().split()))
+    logging.info("Hello!")
+
+    for i in range(1, N + 1):
+        if H[N - i] < H[N - i - 1]:
+            if H[N - i] >= H[N - i - 1] - 1:
+                H[N - i - 1] -= 1
+                continue
+            else:
+                print("No")
+                exit()
+
+
+    print("Yes")
+        
+    
+    
+if __name__ == "__main__":
+    main()

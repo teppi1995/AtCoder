@@ -1,0 +1,13 @@
+import logging
+import math
+
+logging.basicConfig(level=logging.INFO, format="%(message)s")
+#logging.disable(logging.CRITICAL)
+
+H, W = map(int(x) for x in input().split())
+
+fields = [["#" * (W + 2)]]
+fields.extend([list("#" + input() + "#") for _ in range(H)])
+fields.append(["#" * (W + 2)])
+
+logging.info(fields)

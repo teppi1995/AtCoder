@@ -1,0 +1,29 @@
+import logging
+
+logging.basicConfig(level=logging.INFO, format="%(message)s")
+#logging.disable(logging.CRITICAL)
+
+def main():
+    N = int(input())
+    a_ = list(map(int, input().split()))
+    box = [0 for _ in range(N)]
+
+    logging.info("Hello!")
+
+    half_N = N // 2
+    for i in range(N - half_N):
+        box[N - i - 1] = a_[N - i - 1]
+
+    for i in range(half_N):
+        box_num = half_N - i
+
+        sum = 0
+        for j in range(N // box_num - 1):
+            sum += a_[box_num * (j + 2)]
+
+        box[box_num] = a_[box_num] - (sum % 2)
+
+    logging.info(box)
+    
+if __name__ == "__main__":
+    main()

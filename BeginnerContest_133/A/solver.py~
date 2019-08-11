@@ -1,0 +1,2 @@
+N, K = (int(x) for x in input().split())
+L = list(int(x) for x in input().split())

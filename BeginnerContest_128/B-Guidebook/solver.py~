@@ -1,0 +1,14 @@
+from collections import defaultdict
+
+N = int(input())
+restaurants = {}
+for i in range(N):
+    S = input().split()
+    if S[0] in restaurants:
+        restaurants[S[0]].append(int(S[1]))
+    else:
+        restaurants.update(defaultdict(S))
+
+sorted = sorted(restaurants.items(), key=lambda x: x[0])
+
+print(sorted)

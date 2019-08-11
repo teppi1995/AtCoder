@@ -1,0 +1,32 @@
+from numpy.linalg import solve
+
+N = int(input())
+right = list(int(x) * 2 for x in input().split())
+ 
+left = [[0 for i in range(N)] for j in range(N)]
+for i in renge(N):
+    left[i][i] = 1
+    if i <= N - 1:
+        left[i][i + 1] = 1
+    
+left[N][0] = 1
+
+# for i in range(N):
+#     num = []
+#     for j in range(N):
+#         if j == i or j == (i + 1):
+#             num.append(1)
+#         else:
+#             num.append(0)
+#         if i == N - 1:
+#             num[0] = 1        
+#     left.append(num)
+
+print(left)
+
+answer = ""
+for a in solve(left, right):
+    answer += str(int(a))
+    answer += " "
+
+print(answer)

@@ -1,0 +1,21 @@
+import logging
+
+logging.basicConfig(level=logging.INFO, format="%(message)s")
+#logging.disable(logging.CRITICAL)
+
+def main():
+    S = input()
+    logging.info("Hello!")
+
+    S_len = len(S)
+
+    ans = [0 for i in range(S_len)]
+
+    a[0] = 0
+    for i in range(S_len):
+        if S[i] == "?":
+            
+        
+    
+if __name__ == "__main__":
+    main()
