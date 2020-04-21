@@ -1,0 +1,31 @@
+import logging
+
+logging.basicConfig(level=logging.INFO, format="%(message)s")
+#logging.disable(logging.CRITICAL)
+
+def main():
+    N = int(input())
+
+    A = []
+    x = []
+    y = []
+
+    for i in range(N):
+        Ai = int(input())
+        xi = []
+        yi = []
+        A.append(Ai)
+        x.append(xi)
+        y.append(yi)
+
+        for j in range(Ai):
+            xij, yij = map(int, input().split(' '))
+	    xi.append(xij)
+	    yi.append(yij)
+
+    logging.info(A)
+    logging.info(x)
+    logging.info(y)
+    
+if __name__ == "__main__":
+    main()

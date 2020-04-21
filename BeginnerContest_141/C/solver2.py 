@@ -1,0 +1,25 @@
+import logging
+
+logging.basicConfig(level=logging.INFO, format="%(message)s")
+#logging.disable(logging.CRITICAL)
+
+
+def main():
+    N, K, Q = map(int, input().split())
+    L_2 = [int(input()) for _ in range(Q)]
+
+    N_points = [0 for _ in range(N)]
+
+    for i in L_2:
+        N_points[i - 1] += 1
+
+    for i in N_points:
+        if i - (Q - K) > 0:
+            print("Yes")
+        else:
+            print("No")
+
+            
+    
+if __name__ == "__main__":
+    main()

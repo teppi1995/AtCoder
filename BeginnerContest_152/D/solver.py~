@@ -1,0 +1,34 @@
+import logging
+
+logging.basicConfig(level=logging.INFO, format="%(message)s")
+#logging.disable(logging.CRITICAL)
+
+def main():
+    N = int(input())
+    keta = len(str(N))
+    logging.info("Hello!")
+
+    dp = [0] * (N + 1)
+
+    for i in range(1, (N + 1)):
+        if i < 10:
+            dp[i] = i
+        else:
+            if str(N)[0] == str(N)[-1]:
+                dp[i] = dp[i - 1] + 2
+                for i in range(keta - 2):
+                    dp[i] += 10 ** i
+            elif str(N)[0] < str(N)[-1]:
+                dp[i] = dp[i - 1]
+                for i in range(keta - 2):
+                    dp[i] += 10 ** i
+            else:
+                dp[i] = dp[i - 1]
+                for i in range(keta - 1):
+                    dp[i] += 10 ** i
+                
+    print(dp[N])
+    
+                
+if __name__ == "__main__":
+    main()

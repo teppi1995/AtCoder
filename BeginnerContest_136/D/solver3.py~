@@ -1,0 +1,13 @@
+import logging
+
+logging.basicConfig(level=logging.INFO, format="%(message)s")
+#logging.disable(logging.CRITICAL)
+
+def main():
+    S = input()
+    S_len = len(S)
+    child = [1 for _ in range(S_len)]
+
+    
+if __name__ == "__main__":
+    main()

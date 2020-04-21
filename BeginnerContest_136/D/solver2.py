@@ -36,13 +36,18 @@ def main():
             R[R2L] = L_counter
 
     logging.info(R)
-    
-    for i in range(1, S_len):
-        if R[i] != 0 and i % 2 == 1:
-            temp1 = (R[i] + R[i + 1]) // 2
-            temp2 = R[i] + R[i+1] - temp1
-            R[i] = temp1
-            R[i + 1] = temp2
+
+    counter = 0
+    while counter < S_len:
+        if (R[counter] != 0):
+            temp1 = R[counter]
+            temp2 = R[counter + 1]
+            R[counter] = (temp1 - temp1 // 2) + (temp2 // 2)
+            R[counter + 1] = (temp1 // 2) + (temp2 - temp2 // 2)
+            
+            counter += 1
+        counter += 1
+            
 
     answer = ""
     for x in R:

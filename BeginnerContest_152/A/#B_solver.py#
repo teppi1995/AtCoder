@@ -1,0 +1,23 @@
+import logging
+
+logging.basicConfig(level=logging.INFO, format="%(message)s")
+#logging.disable(logging.CRITICAL)
+
+def main():
+    a, b = map(int, input().split())
+    logging.info("Hello!")
+
+    if a < b:
+        if int(str(a) * a) < int(str(b) * a):
+            print(str(a) * b)
+        else:
+            print(str(b) * a)
+    else:
+        if int(str(a) * b) < int(str(b) * b):
+            print(str(a) * b)
+        else:
+            print(str(b) * a)
+            
+    
+if __name__ == "__main__":
+    main()

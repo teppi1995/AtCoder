@@ -1,0 +1,14 @@
+import logging
+
+logging.basicConfig(level=logging.INFO, format="%(message)s")
+#logging.disable(logging.CRITICAL)
+
+def main():
+    N, K, Q = map(int, input().split())
+    L_2 = [list(map(int, input().split())) for _ in range(N)]
+    logging.info(Q)
+    logging.info(L_2)
+
+    
+if __name__ == "__main__":
+    main()
